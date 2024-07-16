@@ -1,7 +1,10 @@
+import 'package:chat_app/routes/routes.dart';
+import 'package:chat_app/view/screens/auth/login_screen.dart';
+import 'package:chat_app/view/screens/auth/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/utils/theme.dart';
-
 import 'package:chat_app/view/widgets/text_utils.dart';
+import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -16,7 +19,7 @@ class WelcomeScreen extends StatelessWidget {
               width: double.infinity,
               height: double.infinity,
               child: Image.asset(
-                'assets/images/background.png',
+                'assets/images/image.jpg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -85,7 +88,7 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: mainColor,
+                        backgroundColor: mainColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
@@ -94,7 +97,7 @@ class WelcomeScreen extends StatelessWidget {
                           vertical: 12,
                         )),
                     onPressed: () {
-                      // Get.offNamed(Routes.loginScreen);
+                      Get.offNamed(Routes.loginScreen);
                     },
                     child: TextUtils(
                       fontSize: 22,
@@ -119,7 +122,7 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          // Get.offNamed(Routes.signUpScreen);
+                          Get.offNamed(Routes.signUpScreen);
                         },
                         child: TextUtils(
                           text: 'Sign Up',

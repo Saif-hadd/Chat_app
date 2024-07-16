@@ -17,13 +17,13 @@ const Color languageSettings = Color(0xffCB256C);
 class ThemesApp {
   static final light = ThemeData(
     primaryColor: mainColor,
-    backgroundColor: Colors.white,
+    scaffoldBackgroundColor: Colors.white,
     brightness: Brightness.light,
   );
 
   static final dark = ThemeData(
     primaryColor: darkGreyClr,
-    backgroundColor: darkGreyClr,
+    scaffoldBackgroundColor: darkGreyClr,
     brightness: Brightness.dark,
   );
 }

@@ -23,9 +23,19 @@ class AppRoutes {
       name: Routes.welcomeScreen,
       page: () => const WelcomeScreen(),
     ),
+    GetPage(
+      name: Routes.loginScreen,
+      page: () => const LoginScreen(),
+    ),
+    GetPage(
+      name: Routes.signUpScreen,
+      page: () => SignUpScreen(),
+    ),
   ];
 }
 
 class Routes {
   static const welcomeScreen = '/welcomeScreen';
+  static const loginScreen = '/loginScreen';
+  static const signUpScreen = '/signUpScreen';
 }
