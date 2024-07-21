@@ -1,5 +1,8 @@
 import 'package:chat_app/utils/theme.dart';
+import 'package:chat_app/view/widgets/auth/auth_button.dart';
 import 'package:chat_app/view/widgets/auth/auth_text_from_field.dart';
+import 'package:chat_app/view/widgets/auth/check_widget.dart';
+import 'package:chat_app/view/widgets/auth/container_under.dart';
 import 'package:chat_app/view/widgets/text_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,7 +18,7 @@ class SignUpScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Colors.white,
+            backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
             elevation: 0,
           ),
           backgroundColor: Colors.white,
@@ -90,10 +93,26 @@ class SignUpScreen extends StatelessWidget {
                           suffixIcon: const Text(""),
                           hintText: 'Password',
                         ),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        CheckWidget(),
+                        const SizedBox(
+                          height: 50,
+                        ),
+                        AuthButton(
+                          onPressed: () {},
+                          text: "SIGN UP",
+                        ),
                       ],
                     ),
                   ),
-                )
+                ),
+                ContainerUnder(
+                  text: 'Already have an Account?',
+                  textType: 'Log in',
+                  onPressed: () {},
+                ),
               ],
             ),
           )),
