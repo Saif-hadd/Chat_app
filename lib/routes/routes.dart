@@ -1,3 +1,4 @@
+import 'package:chat_app/logic/bindings/auth_biniding.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,18 +24,22 @@ class AppRoutes {
     GetPage(
       name: Routes.loginScreen,
       page: () => LoginScreen(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.signUpScreen,
       page: () => SignUpScreen(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.forgetPasswordScreen,
       page: () => ForgotPasswordScreen(),
+      binding: AuthBinding(),
     ),
     GetPage(
       name: Routes.mainScreen,
       page: () => MainScreen(),
+      binding: AuthBinding(),
     ),
   ];
 }

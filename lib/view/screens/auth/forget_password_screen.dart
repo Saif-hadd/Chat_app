@@ -15,15 +15,15 @@ class ForgotPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
         appBar: AppBar(
-          backgroundColor: Get.isDarkMode ? darkGreyClr : Colors.white,
+          backgroundColor: Get.isDarkMode ? Colors.white : darkGreyClr,
           centerTitle: true,
           elevation: 0,
           title: Text(
             'Forgot Password',
             style: TextStyle(
-              color: Get.isDarkMode ? pinkClr : mainColor,
+              color: Get.isDarkMode ? mainColor : pinkClr,
             ),
           ),
           leading: IconButton(
@@ -32,7 +32,7 @@ class ForgotPasswordScreen extends StatelessWidget {
             },
             icon: Icon(
               Icons.arrow_back,
-              color: Get.isDarkMode ? Colors.white : Colors.black,
+              color: Get.isDarkMode ? Colors.black : Colors.white,
             ),
           ),
         ),
@@ -62,7 +62,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                     'If you want to recover your account, then please provide your email ID below..',
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Get.isDarkMode ? Colors.white : Colors.black,
+                      color: Get.isDarkMode ? Colors.black : Colors.white,
                     ),
                   ),
                   const SizedBox(
@@ -86,12 +86,12 @@ class ForgotPasswordScreen extends StatelessWidget {
                       }
                     },
                     prefixIcon: Get.isDarkMode
-                        ? const Icon(
+                        ? Image.asset('assets/images/email.png')
+                        : const Icon(
                             Icons.email,
                             color: pinkClr,
                             size: 30,
-                          )
-                        : Image.asset('assets/images/email.png'),
+                          ),
                     suffixIcon: const Text(""),
                     hintText: 'Email',
                   ),
