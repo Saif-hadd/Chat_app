@@ -1,3 +1,4 @@
+import 'package:chat_app/logic/controllers/auth_controller.dart';
 import 'package:chat_app/utils/my_string.dart';
 import 'package:chat_app/utils/theme.dart';
 import 'package:chat_app/view/widgets/auth/auth_button.dart';
@@ -10,6 +11,8 @@ class ForgotPasswordScreen extends StatelessWidget {
 
   final formKey = GlobalKey<FormState>();
   final TextEditingController emailController = TextEditingController();
+
+  final controller = Get.find<AuthController>();
 
   @override
   Widget build(BuildContext context) {
@@ -98,16 +101,17 @@ class ForgotPasswordScreen extends StatelessWidget {
                   const SizedBox(
                     height: 50,
                   ),
-                  AuthButton(
-                    onPressed: () {
-                      if (formKey.currentState!.validate()) {
-                        String email = emailController.text.trim();
-                        // Handle password reset email submission here
-                        // You can add your own logic to send the email
-                      }
-                    },
-                    text: "SEND",
-                  ),
+                  GetBuilder<AuthController>(builder: (_) {
+                    return AuthButton(
+                      onPressed: () {
+                        if (formKey.currentState!.validate()) {
+                          String email = emailController.text.trim();
+                          controller.resetPassword(email);
+                        }
+                      },
+                      text: "SEND",
+                    );
+                  }),
                 ],
               ),
             ),

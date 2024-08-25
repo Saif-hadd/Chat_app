@@ -96,7 +96,7 @@ class LoginScreen extends StatelessWidget {
                             return AuthTextFromField(
                               controller: passwordController,
                               obscureText:
-                                  controller.isVisibility ? false : true,
+                                  controller.isVisibilty ? false : true,
                               validator: (value) {
                                 if (value.toString().length < 6) {
                                   return 'Password should be longer or equal to 6 characters';
@@ -116,7 +116,7 @@ class LoginScreen extends StatelessWidget {
                                 onPressed: () {
                                   controller.visibility();
                                 },
-                                icon: controller.isVisibility
+                                icon: controller.isVisibilty
                                     ? const Icon(
                                         Icons.visibility,
                                         color: Colors.black,
@@ -151,13 +151,13 @@ class LoginScreen extends StatelessWidget {
                         GetBuilder<AuthController>(builder: (_) {
                           return AuthButton(
                             onPressed: () {
-                              // if (fromKey.currentState!.validate()) {
-                              //   String email = emailController.text.trim();
-                              //   String password = passwordController.text;
+                              if (fromKey.currentState!.validate()) {
+                                String email = emailController.text.trim();
+                                String password = passwordController.text;
 
-                              //   controller.logInUsingFirebase(
-                              //       email: email, password: password);
-                              // }
+                                controller.logInUsingFirebase(
+                                    email: email, password: password);
+                              }
                             },
                             text: "LOG IN",
                           );
@@ -180,7 +180,7 @@ class LoginScreen extends StatelessWidget {
                           children: [
                             InkWell(
                               onTap: () {
-                                // controller.faceBookSignUpApp();
+                                controller.faceBookSignUpApp();
                               },
                               child: Image.asset(
                                 "assets/images/facebook.png",
@@ -192,7 +192,7 @@ class LoginScreen extends StatelessWidget {
                             GetBuilder<AuthController>(builder: (_) {
                               return InkWell(
                                 onTap: () {
-                                  // controller.googleSinUpApp();
+                                  controller.googleSinUpApp();
                                 },
                                 child: Image.asset(
                                   "assets/images/google.png",

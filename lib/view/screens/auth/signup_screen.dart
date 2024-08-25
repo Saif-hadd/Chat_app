@@ -119,7 +119,7 @@ class SignUpScreen extends StatelessWidget {
                             return AuthTextFromField(
                               controller: passwordController,
                               obscureText:
-                                  controller.isVisibility ? false : true,
+                                  controller.isVisibilty ? false : true,
                               validator: (value) {
                                 if (value.toString().length < 6) {
                                   return 'Password should be longer or equal to 6 characters';
@@ -139,7 +139,7 @@ class SignUpScreen extends StatelessWidget {
                                 onPressed: () {
                                   controller.visibility();
                                 },
-                                icon: controller.isVisibility
+                                icon: controller.isVisibilty
                                     ? const Icon(
                                         Icons.visibility,
                                         color: Colors.black,
@@ -163,26 +163,26 @@ class SignUpScreen extends StatelessWidget {
                           builder: (_) {
                             return AuthButton(
                               onPressed: () {
-                                // if (controller.isCheckBox == false) {
-                                //   Get.snackbar(
-                                //     "Check Box",
-                                //     "Please, Accept terms & conditions",
-                                //     snackPosition: SnackPosition.BOTTOM,
-                                //     backgroundColor: Colors.green,
-                                //     colorText: Colors.white,
-                                //   );
-                                // } else if (fromKey.currentState!.validate()) {
-                                //   String name = nameController.text.trim();
-                                //   String email = emailController.text.trim();
-                                //   String password = passwordController.text;
-                                //   controller.signUpUsingFirebase(
-                                //     name: name,
-                                //     email: email,
-                                //     password: password,
-                                //   );
+                                if (controller.isCheckBox == false) {
+                                  Get.snackbar(
+                                    "Check Box",
+                                    "Please, Accept terms & conditions",
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor: Colors.green,
+                                    colorText: Colors.white,
+                                  );
+                                } else if (fromKey.currentState!.validate()) {
+                                  String name = nameController.text.trim();
+                                  String email = emailController.text.trim();
+                                  String password = passwordController.text;
+                                  controller.signUpUsingFirebase(
+                                    name: name,
+                                    email: email,
+                                    password: password,
+                                  );
 
-                                //   controller.isCheckBox = true;
-                                // }
+                                  controller.isCheckBox = true;
+                                }
                               },
                               text: "SIGN UP",
                             );
